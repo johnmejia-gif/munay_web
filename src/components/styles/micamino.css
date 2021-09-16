@@ -1,0 +1,122 @@
+@font-face {
+	font-family: hero;
+	src: url(/src/assets/fonts/hero.ttf);
+}
+@font-face {
+	font-family: Avenir-book;
+	src: url(/src/assets/fonts/Avenir-Book.otf);
+}
+@font-face {
+	font-family: Lie-to-Me;
+	src: url(/src/assets/fonts/Lie-to-Me.ttf);
+}
+@font-face {
+	font-family: Runda-Bold;
+	src: url(/src/assets/fonts/Runda-Bold.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.contenedor-icono {
+	margin: 50px;
+	text-align: center;
+	align-items: center;
+}
+
+.contenedor {
+	background-image: url(/src/assets/img/playa01.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	padding: 10px;
+	width: 100%;
+	height: 600px;
+	background-color: #82b5d2;
+	text-align: center;
+	align-items: center;
+	/* flex-grow: 1; */
+}
+
+.menuppal {
+	margin: 0px;
+	padding: 0px;
+	background-color: #82b5d2;
+	height: auto;
+}
+
+.titulo {
+	color: white;
+}
+.parrafo1 {
+	color: white;
+	font-family: hero;
+}
+.parrafo2 {
+	margin-right: 20%;
+	margin-left: 20%;
+	color: white;
+	font-family: Lie-to-Me;
+	font-size: 20px;
+	font-weight: normal;
+	font-kerning: none;
+	/* -webkit-text-stroke: 0.5px rgb(73, 67, 66); */
+	/* text-shadow: 0.1em 0.1em #333; */
+	text-shadow: 0.05em 0.05em #333;
+}
+.parrafo3 {
+	color: white;
+	font-family: Avenir-Heavy;
+}
+.parrafo4 {
+	color: white;
+	font-family: Runda-Bold;
+}
+
+.imgmunay {
+	width: 150px;
+	height: auto;
+	margin-top: 20px;
+}
+
+.petalos1-1 {
+	background-image: url(/src/assets/img/home-petal-01.png);
+	background-repeat: no-repeat;
+	/* background-color: red; */
+	margin: 20px;
+	padding: 0px;
+	height: 200px;
+	width: 100%;
+}
+.petalos1-2 {
+	background-image: url(/src/assets/img/home-petal-02.png);
+	background-repeat: no-repeat;
+	/* background-color: red; */
+	margin: 20px;
+	padding: 0px;
+	height: 200px;
+	width: 100%;
+}
+.petalos1-3 {
+	background-image: url(/src/assets/img/home-petal-03.png);
+	background-repeat: no-repeat;
+	/* background-color: red; */
+	margin: 20px;
+	padding: 0px;
+	height: 200px;
+	width: 100%;
+}
+.petalos1-4 {
+	background-image: url(/src/assets/img/home-petal-04.png);
+	background-repeat: no-repeat;
+	/* background-color: red; */
+	margin: 20px;
+	padding: 0px;
+	height: 200px;
+	width: 100%;
+}

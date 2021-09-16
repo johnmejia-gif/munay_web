@@ -1,0 +1,2 @@
+export const ARTICLE_LOADER = 'ARTICLE_LOADER';
+export const ARTICLE_CONTENT = 'ARTICLE_CONTENT';

@@ -1,0 +1,1 @@
+export const SOCIAL_SECTION = 'SOCIAL_SECTION';

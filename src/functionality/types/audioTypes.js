@@ -1,0 +1,2 @@
+export const AUDIO_LOADING = "AUDIO_LOADING";
+export const AUDIO_CONTENT = "AUDIO_CONTENT";
