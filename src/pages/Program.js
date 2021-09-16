@@ -17,7 +17,7 @@ const Program = () => {
 						type="audio/mpeg"
 					/>
 				</audio> */}
-				<audio controlsList="nodownload" controls autoPlay hidden vol="2">
+				<audio controlsList="nodownload" controls autoPlay hidden vol="5">
 					<source src={audio1} />
 				</audio>
 			</div>
