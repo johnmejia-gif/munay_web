@@ -1,5 +1,11 @@
 import firebase from "firebase";
 
+const api_endpoint = "https://us-central1-munay-db.cloudfunctions.net/api";
+const stripe_endpoint =
+	"https://us-central1-munay-db.cloudfunctions.net/stripe";
+const stripe_test_endpoint =
+	"https://us-central1-munay-db.cloudfunctions.net/stripe/development";
+
 const firebaseConfig = {
 	apiKey: "AIzaSyC3Se1SLe08KWnOcpP1o61gjMQo6jROyDQ",
 	authDomain: "munay-db.firebaseapp.com",
@@ -15,4 +21,10 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 
-export { auth, firebaseConfig };
+export {
+	auth,
+	firebaseConfig,
+	api_endpoint,
+	stripe_endpoint,
+	stripe_test_endpoint,
+};

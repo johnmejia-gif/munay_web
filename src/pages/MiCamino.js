@@ -39,21 +39,27 @@ const MiCamino = () => {
 							</div>
 						</Grid>
 						<Grid item xs={3}>
+							<div className="petalos1-2">
+								<p>HOLA</p>
+								<p>HOLA</p>
+								<p>HOLA</p>
+								<p>HOLA</p>
+								<p>HOLA</p>
+								<p>HOLA</p>
+							</div>
+						</Grid>
+						<Grid item xs={3}>
 							<div className="petalos1-3"></div>
 						</Grid>
 						<Grid item xs={3}>
 							<div className="petalos1-4"></div>
 						</Grid>
-						<Grid item xs={3}>
-							<div className="petalos1-2"></div>
-						</Grid>
+						{/* <Grid item xs={3}>
+							<div className="petalos1-4"></div>
+						</Grid> */}
 						{/* <Grid item xs={1} className="petalos1"></Grid>
 						<Grid item xs={1} className="petalos1"></Grid> */}
 					</Grid>
-					{/* <h3 className="parrafo1">La felicidad .....</h3>
-					<h3 className="parrafo2">La felicidad .....</h3>
-					<h3 className="parrafo3">La felicidad .....</h3>
-					<h3 className="parrafo4">La felicidad .....</h3> */}
 				</div>
 			</Grid>
 		</Grid>

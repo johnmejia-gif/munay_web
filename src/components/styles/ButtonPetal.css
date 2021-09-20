@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.contenedor-icono {
+	margin: 50px;
+	text-align: center;
+	align-items: center;
+}
+
+.contenedor {
+	background-image: url(/src/assets/img/playa01.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	padding: 10px;
+	width: 100%;
+	height: 600px;
+	background-color: #82b5d2;
+	text-align: center;
+	align-items: center;
+	/* flex-grow: 1; */
+}
+
+.menuppal {
+	margin: 0px;
+	padding: 0px;
+	background-color: #82b5d2;
+	height: auto;
+}
+
+.titulo {
+	color: white;
+}
+.parrafo1 {
+	color: white;
+	font-family: hero;
+}
+.parrafo2 {
+	margin-right: 20%;
+	margin-left: 20%;
+	color: white;
+	font-family: Lie-to-Me;
+	font-size: 20px;
+	font-weight: normal;
+	font-kerning: none;
+	/* -webkit-text-stroke: 0.5px rgb(73, 67, 66); */
+	/* text-shadow: 0.1em 0.1em #333; */
+	text-shadow: 0.05em 0.05em #333;
+}
+.parrafo3 {
+	color: white;
+	font-family: Avenir-Heavy;
+}
+.parrafo4 {
+	color: white;
+	font-family: Runda-Bold;
+}
+
+.imgmunay {
+	width: 150px;
+	height: auto;
+	margin-top: 20px;
+}
+
+.buttonPetals1 {
+	background-image: url(/src/assets/img/petal-purple.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-color: red; */
+	margin: 0px;
+	padding: 0px;
+	min-height: 300px;
+	max-width: 100%;
+}
+
+.nombre-practica {
+	/* background-color: aquamarine; */
+	font-family: avenir-book;
+	text-align: left;
+	align-content: center;
+	color: white;
+	margin-left: 50px;
+	margin-top: -20px;
+	margin-bottom: 20px;
+}

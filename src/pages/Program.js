@@ -17,11 +17,11 @@ const Program = () => {
 						type="audio/mpeg"
 					/>
 				</audio> */}
-				<audio controlsList="nodownload" controls autoPlay hidden vol="5">
+				<audio controls volume="1.0" autoPlay>
 					<source src={audio1} />
 				</audio>
 			</div>
-			{/* <audio src="audio1.mp3" controls autoPlay /> */}
+
 			<h2>Contendio de Programa de Felicidad</h2>
 		</div>
 	);
