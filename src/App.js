@@ -18,6 +18,7 @@ import HomeLogged from "./pages/HomeLogged";
 import Program from "./pages/Program";
 import Moment from "./pages/Moment";
 import Practices from "./pages/Practices";
+import PracticesContent from "../src/components/happyPractice/PracticesContent";
 // import { syncHistoryWithStore } from "react-router-redux";
 // import browserHistory from "history/createBrowserHistroy";
 // import { createBrowserHistory } from "history";
@@ -39,6 +40,11 @@ function App() {
 					<Route exact path="/happiness-program" component={Program} />
 					<Route exact path="/happiness-moment" component={Moment} />
 					<Route exact path="/happiness-practices" component={Practices} />
+					<Route
+						exact
+						path="/happiness-practices/content/:title/:codActivity"
+						component={PracticesContent}
+					/>
 					<Route exact path="/mypath" component={MiCamino} height="20px" />
 					<Route path="*" component={Error404} />
 					<div className="App">

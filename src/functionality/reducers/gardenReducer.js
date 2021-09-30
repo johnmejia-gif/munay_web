@@ -79,7 +79,7 @@ const INITIAL_STATE = {
 	garden_supplies: false,
 };
 
-export default (state = INITIAL_STATE, action) => {
+export default function gardenReducer(state = INITIAL_STATE, action) {
 	switch (action.type) {
 		case GARDEN_DATA:
 			return {
@@ -276,4 +276,4 @@ export default (state = INITIAL_STATE, action) => {
 		default:
 			return { ...state };
 	}
-};
+}

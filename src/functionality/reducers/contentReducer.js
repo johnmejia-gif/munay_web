@@ -36,7 +36,7 @@ const INITIAL_STATE = {
 	conscious_phrases: [],
 };
 
-export default (state = INITIAL_STATE, action) => {
+export default function contentReducer(state = INITIAL_STATE, action) {
 	switch (action.type) {
 		case CONTENT_PROGRAMS:
 			return {
@@ -122,4 +122,4 @@ export default (state = INITIAL_STATE, action) => {
 		default:
 			return { ...state };
 	}
-};
+}
