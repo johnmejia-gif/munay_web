@@ -7,6 +7,7 @@ import gardenReducer from "./gardenReducer";
 import suscriptionReducer from "./subscriptionReducer";
 import activityReducer from "./activityReducer";
 import practiceReducer from "./practiceReducer";
+import globalReducer from "./globalReducer";
 
 export default combineReducers({
 	userReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
 	suscriptionReducer,
 	activityReducer,
 	practiceReducer,
+	globalReducer,
 	routing: routerReducer,
 });

@@ -1,0 +1,39 @@
+.modalito {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgba(0, 0, 0, 0.75);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalito.is-open {
+	display: flex;
+}
+
+.modal-container {
+	position: relative;
+	padding: 10px;
+	/* min-width: 620px;
+	max-width: 700px; */
+	width: 90%;
+	min-height: 200px;
+	max-height: 800px;
+	overflow: auto;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.modal-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	border-radius: 5px;
+	background-color: #224459;
+	color: #fff;
+	width: 40px;
+}

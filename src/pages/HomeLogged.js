@@ -19,9 +19,10 @@ function HomeLogged(props) {
 		if (user) {
 			userData();
 		}
-		if (content_loading) {
-			allContents();
-		}
+		allContents();
+		// if (content_loading) {
+		// 	allContents();
+		// }
 	}, []);
 
 	const munayIsLogged = localStorage.getItem("@Munay:isLogged");

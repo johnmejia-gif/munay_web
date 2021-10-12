@@ -105,6 +105,7 @@ export const practiceSelectedActivity =
  */
 export const practiceListLikedActivities = () => async (dispatch, getState) => {
 	const { user } = getState().userReducer;
+	console.log("///// en practiceListLinkedActivities el user es:", { user });
 	let payload = await FirebaseActions.getDocsPerUser(
 		"liked_activities",
 		user.uid

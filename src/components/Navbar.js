@@ -64,14 +64,14 @@ const useStyles = makeStyles((theme) => ({
 const { userSignOut } = userActions;
 
 function Navbar(props) {
-	console.log("empezó a ejecutar el Navbar");
+	// console.log("empezó a ejecutar el Navbar");
 
 	const {
 		userSignOut,
 		userReducer: { user, user_all_data },
 	} = props;
 
-	console.log("que hay en user en el navbar? : ", user);
+	// console.log("que hay en user en el navbar? : ", user);
 	// const userInfo = localStorage.getItem("@Munay:userData");
 
 	let nicName = null;
@@ -84,14 +84,14 @@ function Navbar(props) {
 		}
 	}
 
-	console.log("en el nicname hay:", nicName);
+	// console.log("en el nicname hay:", nicName);
 
 	const classes = useStyles();
 	const history = useHistory();
 
 	const goOut = async () => {
 		if (user) {
-			console.log("entó a borrar el usuario");
+			// console.log("entó a borrar el usuario");
 			await userSignOut();
 			// console.log(response);
 			history.push("/");

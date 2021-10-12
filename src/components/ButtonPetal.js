@@ -37,16 +37,37 @@ function ButtonPetal(props) {
 		// height: "100px",
 	};
 
-	function hagaEsto() {
-		console.log("Entra a hacer esto....", propsNavigation.title);
+	function petalClick() {
+		// console.log("Entra a hacer esto....", propsNavigation.title);
 		localStorage.setItem("@MUNAY:propsNavigation.title", name);
 		localStorage.setItem("@MUNAY:propsNavigation.codActivity", id);
 	}
-	const goTo = "/happiness-practices/content/" + name + "/" + id;
+
+	to = to && id === "ayunodigital" ? "DigitalFast" : to;
+	to = to && id === "ConsciousMusic" ? "MusicPractice" : to;
+	to = to && id === "ConsciousReading" ? "ReadPractice" : to;
+	to = to && id === "IntermittentFasting" ? "IntermittentFasting" : to;
+	marginBottom = marginBottom ? marginBottom : 0;
+	marginHorizontal = marginHorizontal ? marginHorizontal : 0;
+	if (!user && (id === "ayunodigital" || id === "IntermittentFasting")) {
+		to = "Register";
+	}
+	if (
+		user &&
+		!user_permissions &&
+		(id === "ayunodigital" || id === "IntermittentFasting")
+	) {
+		to = null;
+		action = () => {
+			subscriptionModal(true);
+		};
+	}
+
+	const goTo = "/happiness-practices/content/" + to + "/" + name + "/" + id;
 
 	return (
 		<Grid item xs={3}>
-			<div onClick={hagaEsto}>
+			<div onClick={petalClick}>
 				{/* <Link to="/happiness-practices/content/:juanito"> */}
 				<Link to={goTo}>
 					<div style={divStyle}>

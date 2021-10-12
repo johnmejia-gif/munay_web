@@ -29,9 +29,9 @@ import {
 import { INVENTORY_LIST_USERS, INVENTORY_CLEAR } from "../types/inventoryTypes";
 import FirebaseActions from "./FirebaseActions";
 import { GLOBAL_SIGNOUT, GLOBAL_SPLASH } from "../types/globalTypes";
-// import { api_endpoint as api_url } from "../../../settings";
+import { api_endpoint as api_url } from "../../settings";
 import axios from "axios";
-// import { openCloseTooltip } from "./globalActions";
+import { openCloseTooltip } from "./globalActions";
 import { GARDEN_MY_LIST_CLEAR } from "../types/gardenTypes";
 import { WAY_HAPPINESS_DAYS_TRAINED } from "../types/wayHappinessTypes";
 import { SUBSCRIPTION_GROUP } from "../types/subscriptionTypes";
@@ -303,10 +303,11 @@ export const userAuth = () => async (dispatch, getState) => {
 		email: user_email,
 		password: user_password,
 	};
-	console.log("en data hay...", data);
+	// console.log("en data hay...", data);
 
 	let response = await FirebaseActions.signIn(data);
-	console.log("la respuesta de signIn es:", response);
+
+	// console.log("la respuesta de signIn es:", response);
 
 	try {
 		if (!response) {
@@ -344,7 +345,8 @@ export const userAuth = () => async (dispatch, getState) => {
 				payload: "Datos de ingreso Incorrectos",
 			});
 		} else {
-			console.log("-+-+-+ Entró al else");
+			console.log("-+-+-+ Entró al else y va agrabar response:", response);
+			localStorage.setItem("@Munay:responseSignIn", JSON.stringify(response));
 			dispatch({
 				type: USER_DATA,
 				payload: response,
@@ -355,7 +357,7 @@ export const userAuth = () => async (dispatch, getState) => {
 
 		// localStorage.setItem("@Munay:isLogged", "is_logged");
 	} catch (err) {
-		console.log("=>>>>>>  entró al catch");
+		// console.log("=>>>>>>  entró al catch");
 		alert(
 			"alerta 2 . Upsss!!!, Hubo un error, valida que los datos estén bien escritos."
 		);
@@ -366,7 +368,7 @@ export const userAuth = () => async (dispatch, getState) => {
  * User sign out
  */
 export const userSignOut = () => (dispatch) => {
-	console.log("Entró al userSignOut");
+	// console.log("Entró al userSignOut");
 	dispatch({
 		type: USER_DATA,
 		payload: null,
@@ -397,6 +399,7 @@ export const userSignOut = () => (dispatch) => {
 	localStorage.removeItem("@Munay:userRatings");
 	localStorage.removeItem("@Munay:userTraining");
 	localStorage.removeItem("@Munay:userLikeResource");
+	localStorage.removeItem("@Munay:responseSignIn");
 	FirebaseActions.signOut();
 };
 
@@ -414,14 +417,16 @@ export const userClear = () => (dispatch) => {
  * @param {string} codUser
  */
 const getUserActivitiesHistorial = (codUser) => (dispatch) => {
-	localStorage.getItem("@Munay:userActivitiesHistorial").then((res) => {
-		if (res) {
-			dispatch({
-				type: USER_ACTIVITIES_HISTORIAL,
-				payload: JSON.parse(res),
-			});
-		}
-	});
+	const munayUserActiviesHistorial = localStorage.getItem(
+		"@Munay:userActivitiesHistorial"
+	);
+	if (munayUserActiviesHistorial !== null) {
+		dispatch({
+			type: USER_ACTIVITIES_HISTORIAL,
+			payload: JSON.parse(munayUserActiviesHistorial),
+		});
+	}
+
 	FirebaseActions.getDocsPerUser("activities_historial", codUser)
 		.then((res) => {
 			if (res) {
@@ -443,14 +448,14 @@ const getUserActivitiesHistorial = (codUser) => (dispatch) => {
  * @param {string} codUser
  */
 const getUserRatings = (codUser) => (dispatch) => {
-	localStorage.getItem("@Munay:userRatings").then((res) => {
-		if (res) {
-			dispatch({
-				type: USER_RATINGS,
-				payload: JSON.parse(res),
-			});
-		}
-	});
+	const munayUserRatings = localStorage.getItem("@Munay:userRatings");
+	if (munayUserRatings !== null) {
+		dispatch({
+			type: USER_RATINGS,
+			payload: JSON.parse(munayUserRatings),
+		});
+	}
+
 	FirebaseActions.getDocsPerUser("activity_rating", codUser)
 		.then((res) => {
 			if (res) {
@@ -468,45 +473,44 @@ const getUserRatings = (codUser) => (dispatch) => {
  * Get list trainig unblocked
  * @param {string} codUser
  */
-// const getUserTraining = (codUser) => (dispatch) => {
-// 	localStorage.getItem("@Munay:userTraining").then((res) => {
-// 		if (res) {
-// 			dispatch({
-// 				type: USER_TRAINING,
-// 				payload: JSON.parse(res),
-// 			});
-// 		}
-// 	});
-// 	axios
-// 		.get(`${api_url}/v1/program/unblock/${codUser}`)
-// 		.then((res) => {
-// 			if (res.data) {
-// 				dispatch({
-// 					type: USER_TRAINING,
-// 					payload: res.data.data,
-// 				});
-// 				localStorage.setItem(
-// 					"@Munay:userTraining",
-// 					JSON.stringify(res.data.data)
-// 				);
-// 			}
-// 		})
-// 		.catch((err) => console.log("Error list training: ", err));
-// };
+const getUserTraining = (codUser) => (dispatch) => {
+	const munayUserTraining = localStorage.getItem("@Munay:userTraining");
+	if (munayUserTraining !== null) {
+		dispatch({
+			type: USER_TRAINING,
+			payload: JSON.parse(munayUserTraining),
+		});
+	}
+	axios
+		.get(`${api_url}/v1/program/unblock/${codUser}`)
+		.then((res) => {
+			if (res.data) {
+				dispatch({
+					type: USER_TRAINING,
+					payload: res.data.data,
+				});
+				localStorage.setItem(
+					"@Munay:userTraining",
+					JSON.stringify(res.data.data)
+				);
+			}
+		})
+		.catch((err) => console.log("Error list training: ", err));
+};
 
 /**
  * Get likes to resources
  * @param {string} codUser
  */
 const getUserLikeResouce = (codUser) => (dispatch) => {
-	localStorage.getItem("@Munay:userLikeResource").then((res) => {
-		if (res) {
-			dispatch({
-				type: USER_LIKE_RESOURCE,
-				payload: JSON.parse(res),
-			});
-		}
-	});
+	const munayUserLikeResource = localStorage.getItem("@Munay:userLikeResource");
+	if (munayUserLikeResource !== null) {
+		dispatch({
+			type: USER_LIKE_RESOURCE,
+			payload: JSON.parse(munayUserLikeResource),
+		});
+	}
+
 	FirebaseActions.getDataSubcollection("users", codUser, "like_resources")
 		.then((res) => {
 			if (res) {
@@ -536,62 +540,54 @@ export const userHello = (payload) => (dispatch) => {
  */
 export const userData = () => (dispatch, getState) => {
 	const { user } = getState().userReducer;
-	console.log("ingresó a la función userData con user:", user);
+	// console.log("ingresó a la función userData con user:", user);
 	if (user) {
-		console.log("comprobó el user...");
+		// console.log("comprobó el user...");
 		const munayUserData = localStorage.getItem("@Munay:userData");
 		console.log("*** munayUserData: ", munayUserData);
 		if (munayUserData !== null) {
 			console.log("entró al si....");
+			const asyncRes = JSON.parse(munayUserData);
+			if (asyncRes.is_active) {
+				dispatch({
+					type: USER_ALL_DATA,
+					payload: asyncRes,
+				});
+				dispatch(userHello(true));
+				dispatch(userPermissions());
+				dispatch(refreshUserData(false));
+			} else {
+				alert(
+					"Upsss!!!",
+					"Tu usuario esta bloqueado, por favor contacta al administrador para mas información"
+				);
+				dispatch(userSignOut());
+			}
 		} else {
 			console.log("entró al NOOOO...");
-			console.log("va a enviarlo a refreshUserData");
+			// console.log("va a enviarlo a refreshUserData");
 			dispatch(refreshUserData(true));
 		}
-
-		// localStorage.getItem("@Munay:userData").then((res) => {
-		// 	console.log("res:", res);
-		// 	if (res) {
-		// 		const asyncRes = JSON.parse(res);
-		// 		if (asyncRes.is_active) {
-		// 			dispatch({
-		// 				type: USER_ALL_DATA,
-		// 				payload: asyncRes,
-		// 			});
-		// 			dispatch(userHello(true));
-		// 			// dispatch(userPermissions());
-		// 			dispatch(refreshUserData(false));
-		// 		} else {
-		// 			alert(
-		// 				"Upsss!!!, Tu usuario esta bloqueado, por favor contacta al administrador para mas información"
-		// 			);
-		// 			dispatch(userSignOut());
-		// 		}
-		// 	} else {
-		// 		console.log("va a enviarlo a refreshUserData");
-		// 		dispatch(refreshUserData(true));
-		// 	}
-		// });
-		// FirebaseActions.onUpdateUserData(user.uid, (res) => {
-		// 	if (res) {
-		// 		dispatch({
-		// 			type: USER_ALL_DATA,
-		// 			payload: res,
-		// 		});
-		// 		localStorage.setItem("@Munay:userData", JSON.stringify(res));
-		// 	}
-		// });
+		FirebaseActions.onUpdateUserData(user.uid, (res) => {
+			if (res) {
+				dispatch({
+					type: USER_ALL_DATA,
+					payload: res,
+				});
+				localStorage.setItem("@Munay:userData", JSON.stringify(res));
+			}
+		});
 		// List trainings to user
-		// dispatch(getUserTraining(user.uid));
+		dispatch(getUserTraining(user.uid));
 
 		// List rating to activities from user
-		// dispatch(getUserRatings(user.uid));
+		dispatch(getUserRatings(user.uid));
 
 		// User activities historial
-		// dispatch(getUserActivitiesHistorial(user.uid));
+		dispatch(getUserActivitiesHistorial(user.uid));
 
 		// User like resource
-		// dispatch(getUserLikeResouce(user.uid));
+		dispatch(getUserLikeResouce(user.uid));
 	}
 };
 
@@ -601,24 +597,27 @@ export const userData = () => (dispatch, getState) => {
  */
 export const refreshUserData = (status) => (dispatch, getState) => {
 	const { user } = getState().userReducer;
-	// const { global_tooltip } = getState().globalReducer;
+	const { global_tooltip } = getState().globalReducer;
 	console.log("<==<<<<==  entró a refreshUserData con user:", user);
 	FirebaseActions.docDetail("users", user.uid)
 		.then((res) => {
 			if (res) {
-				console.log("**** la res es:", res);
+				console.log("**** la respuesta de refreshUserData es:", res);
 				if (res.is_active) {
 					dispatch({
 						type: USER_ALL_DATA,
 						payload: res,
 					});
-					// if (!global_tooltip) {
-					// 	dispatch(userPermissions());
-					// }
+					if (!global_tooltip) {
+						console.log("=======  va a ingrear a userPermissions");
+						dispatch(userPermissions());
+					}
 					if (status) {
 						dispatch(userHello());
 					}
 					localStorage.setItem("@Munay:userData", JSON.stringify(res));
+					const provisional = localStorage.getItem("@Munay:userData");
+					console.log("---- ya debe haber @Munay:userData y es: ", provisional);
 				} else {
 					alert(
 						"Upsss!!!, Tu usuario esta bloqueado, por favor contacta al administrador para mas información"
@@ -846,7 +845,7 @@ export const userUpdate = (payload) => (dispatch, getState) => {
 	});
 
 	if (!user_test_time) {
-		// dispatch(userPermissions());
+		dispatch(userPermissions());
 	}
 
 	localStorage.setItem("@Munay:userData", JSON.stringify(payload));
@@ -878,87 +877,107 @@ export const userTokenNotifications = (push_token) => (dispatch, getState) => {
 /**
  * Validate permissions to current user
  */
-// export const userPermissions = () => (dispatch, getState) => {
-// 	const { user_all_data } = getState().userReducer;
-// 	dispatch({
-// 		type: USER_TEST_TIME,
-// 		payload: true,
-// 	});
-// 	if (user_all_data.app_access_type != undefined) {
-// 		if (user_all_data.app_access_type == "1") {
-// 			dispatch({
-// 				type: USER_PERMISSIONS,
-// 				payload: true,
-// 			});
-// 			return;
-// 		}
-// 	}
-// 	if (user_all_data.cod_subscription && user_all_data.subscription !== "free") {
-// 		dispatch({
-// 			type: USER_PERMISSIONS,
-// 			payload: true,
-// 		});
-// 		return;
-// 	}
-// 	if (!user_all_data.start_trial) {
-// 		dispatch(
-// 			openCloseTooltip({
-// 				status: false,
-// 				title: "",
-// 				message: "",
-// 				subscription: false,
-// 			})
-// 		);
-// 		dispatch({
-// 			type: USER_PERMISSIONS,
-// 			payload: false,
-// 		});
-// 		return;
-// 	}
-// 	let currentDate = FirebaseActions.getFormatDate();
-// 	currentDate = new Date(currentDate);
-// 	let testDate = new Date(user_all_data.start_trial);
-// 	// let testDate = new Date('2020/08/02');
-// 	let resDate = currentDate - testDate;
-// 	resDate = resDate / (1000 * 60 * 60 * 24);
-// 	if (resDate >= 0 && resDate <= 7) {
-// 		let days = 7 - resDate;
-// 		let message = `Tienes ${days} días de prueba. Puedes activar Munay premium en cualquier momento.`;
-// 		if (days === 0) {
-// 			message = `Este es tu último día de prueba. Puedes activar Munay premium en cualquier momento.`;
-// 		}
-// 		let title = `¡Gracias por entrenar la felicidad en Munay!`;
-// 		dispatch({
-// 			type: USER_PERMISSIONS,
-// 			payload: true,
-// 		});
-// 		dispatch(
-// 			openCloseTooltip({
-// 				status: true,
-// 				title,
-// 				message,
-// 				subscription: true,
-// 			})
-// 		);
-// 		return;
-// 	} else {
-// 		let name =
-// 			user_all_data.firstname != ""
-// 				? user_all_data.firstname
-// 				: user_all_data.username;
-// 		let message = `Hola ${name}, la semana de prueba en Munay premium terminó. Si quieres volver a Munay Premium con acceso a todo el contenido y secciones puedes suscribirte en "Mi espacio" o haz click aquí.`;
-// 		let title = `Entrenar tu felicidad es nuestra motivación y sustento`;
-// 		dispatch(
-// 			openCloseTooltip({
-// 				status: true,
-// 				title,
-// 				message,
-// 				subscription: true,
-// 			})
-// 		);
-// 		dispatch({
-// 			type: USER_PERMISSIONS,
-// 			payload: false,
-// 		});
-// 	}
-// };
+export const userPermissions = () => (dispatch, getState) => {
+	const { user_all_data } = getState().userReducer;
+	console.log(
+		"°°°°° en userPermisions el use_all_data ahora es:",
+		user_all_data
+	);
+	dispatch({
+		type: USER_TEST_TIME,
+		payload: true,
+	});
+	if (user_all_data.app_access_type !== undefined) {
+		if (user_all_data.app_access_type === "1") {
+			dispatch({
+				type: USER_PERMISSIONS,
+				payload: true,
+			});
+			return;
+		}
+	}
+	if (user_all_data.cod_subscription && user_all_data.subscription !== "free") {
+		dispatch({
+			type: USER_PERMISSIONS,
+			payload: true,
+		});
+		return;
+	}
+	if (!user_all_data.start_trial) {
+		dispatch(
+			openCloseTooltip({
+				status: false,
+				title: "",
+				message: "",
+				subscription: false,
+			})
+		);
+		dispatch({
+			type: USER_PERMISSIONS,
+			payload: false,
+		});
+		return;
+	}
+	let currentDate = FirebaseActions.getFormatDate();
+	currentDate = new Date(currentDate);
+	let testDate = new Date(user_all_data.start_trial);
+	// let testDate = new Date('2020/08/02');
+	let resDate = currentDate - testDate;
+	resDate = resDate / (1000 * 60 * 60 * 24);
+	if (resDate >= 0 && resDate <= 7) {
+		let days = 7 - resDate;
+		let message = `Tienes ${days} días de prueba. Puedes activar Munay premium en cualquier momento.`;
+		if (days === 0) {
+			message = `Este es tu último día de prueba. Puedes activar Munay premium en cualquier momento.`;
+		}
+		let title = `¡Gracias por entrenar la felicidad en Munay!`;
+		dispatch({
+			type: USER_PERMISSIONS,
+			payload: true,
+		});
+		dispatch(
+			openCloseTooltip({
+				status: true,
+				title,
+				message,
+				subscription: true,
+			})
+		);
+		return;
+	} else {
+		let name =
+			user_all_data.firstname !== ""
+				? user_all_data.firstname
+				: user_all_data.username;
+		let message = `Hola ${name}, la semana de prueba en Munay premium terminó. Si quieres volver a Munay Premium con acceso a todo el contenido y secciones puedes suscribirte en "Mi espacio" o haz click aquí.`;
+		let title = `Entrenar tu felicidad es nuestra motivación y sustento`;
+		dispatch(
+			openCloseTooltip({
+				status: true,
+				title,
+				message,
+				subscription: true,
+			})
+		);
+		dispatch({
+			type: USER_PERMISSIONS,
+			payload: false,
+		});
+	}
+};
+
+/**
+ * push hystory like a cookies
+ */
+export const userRemember = () => (dispatch) => {
+	const response = localStorage.getItem("@Munay:responseSignIn");
+	console.log(
+		"$$$ está en user Remember, en @Munay:responeSignIn hay:",
+		response
+	);
+	dispatch({
+		type: USER_DATA,
+		payload: JSON.parse(response),
+	});
+	dispatch(userData());
+};

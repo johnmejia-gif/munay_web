@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.cont_buttonList {
+	height: 70px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	justify-content: center;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.cont_pr_list {
+	height: 70px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 20% 80%;
+	justify-content: center;
+}
+.cont_im_pr {
+	align-items: center;
+	padding: 10px;
+}
+
+.cont_im_pr img {
+	border-radius: 5px;
+}
+
+.text_pr {
+	text-align: center;
+	padding: 20px;
+}

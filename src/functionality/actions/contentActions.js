@@ -206,13 +206,13 @@ export const distributeContent = (payload) => (dispatch) => {
 			conscious_phrases,
 		},
 	} = payload;
-	console.log("++++ ingresó a distributeContent....");
+	// console.log("++++ ingresó a distributeContent....");
 	let programs = activities.filter((item) => item.type === 1);
 	let practices = activities.filter((item) => item.type === 2);
-	console.log("que hay en activities:---");
-	console.log(activities);
-	console.log(">>>> que hay en practices");
-	console.log(practices);
+	// console.log("que hay en activities:---");
+	// console.log(activities);
+	// console.log(">>>> que hay en practices");
+	// console.log(practices);
 
 	dispatch(
 		allocateResourceForProgramActivities(
@@ -331,7 +331,7 @@ export const getAllContents = () => (dispatch) => {
 	axios
 		.get(`${api_url}/v1/init`)
 		.then((res) => {
-			console.log("res data");
+			console.log(">>>>> aquí está toda la data en res data");
 			console.log(res);
 			if (res.data) {
 				let saveData = {
@@ -350,7 +350,7 @@ export const getAllContents = () => (dispatch) => {
  * Show or get contents
  */
 export const allContents = () => (dispatch) => {
-	//dispatch(getAllContents());
+	dispatch(getAllContents());
 	const res1 = localStorage.getItem("@MUNAY:allContents");
 	if (res1) {
 		const res = JSON.parse(res1);

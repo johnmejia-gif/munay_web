@@ -8,10 +8,10 @@ const Practices = (props) => {
 	const {
 		contentReducer: { content_loading, practices },
 	} = props;
-	console.log("Que hay en practices:...");
-	console.log(practices);
-	console.log("valor de Content_loading:...");
-	console.log(content_loading);
+	// console.log(">>>>>>  Que hay en practices:...");
+	// console.log(practices);
+	// console.log("valor de Content_loading:...");
+	// console.log(content_loading);
 	return (
 		<div className="contenedor-practices">
 			<h2 className="title-practices">Prácticas de Felicidad</h2>
@@ -22,8 +22,8 @@ const Practices = (props) => {
 
 			<Grid container>
 				{practices.map(
-					(practice) => {
-						return <ButtonPetal {...practice} />;
+					(practice, index) => {
+						return <ButtonPetal {...practice} key={index} to="HappyPractice" />;
 					}
 					// <p>hola, hola , hola</p>
 					// <h3>{practice.name}</h3>

@@ -83,7 +83,7 @@ function LoginScreen(props) {
 		const response = await userAuth();
 		const res = localStorage.getItem("@Munay:isLogged");
 		// const { user_error } = getState().userReducer;
-		console.log("la respuesta response es:", response);
+		console.log("1 2 3 4 la respuesta response es:", response);
 		console.log("el user_error es:", user_error);
 		if (res === "is_logged") {
 			history.push("/home-logged");
