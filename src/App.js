@@ -47,15 +47,6 @@ function App() {
 					/>
 					<Route exact path="/mypath" component={MiCamino} height="20px" />
 					<Route path="*" component={Error404} />
-					<div className="App">
-						{/* <video autoPlay loop muted className="Fondo2">
-				<p>DEbe mostrar algoo</p>
-				<source src={homevideo} type="video/mp4" />
-			</video> */}
-						{/* <Loader /> */}
-						{/* <Loading /> */}
-						{/* <MiCamino /> */}
-					</div>
 				</Switch>
 			</Router>
 		</Provider>

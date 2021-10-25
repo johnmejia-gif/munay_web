@@ -1,5 +1,6 @@
 import firebase from "firebase";
 
+const mode = "production";
 const api_endpoint = "https://us-central1-munay-db.cloudfunctions.net/api";
 const stripe_endpoint =
 	"https://us-central1-munay-db.cloudfunctions.net/stripe";
@@ -27,4 +28,5 @@ export {
 	api_endpoint,
 	stripe_endpoint,
 	stripe_test_endpoint,
+	mode,
 };

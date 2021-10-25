@@ -8,8 +8,10 @@ import suscriptionReducer from "./subscriptionReducer";
 import activityReducer from "./activityReducer";
 import practiceReducer from "./practiceReducer";
 import globalReducer from "./globalReducer";
+import workoutReducer from "./workoutReducer";
 
 export default combineReducers({
+	workoutReducer,
 	userReducer,
 	gardenReducer,
 	contentReducer,

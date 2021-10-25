@@ -42,190 +42,196 @@ import {
  * Show rating to activity
  * @param {string} codActivity Id activity
  */
-// export const activityViewRating = (codActivity) => (dispatch, getState) => {
-//   if (codActivity !== null) {
-//     const { user_ratings } = getState().userReducer;
-//     let rating = user_ratings.filter(item => (item.cod_activity === codActivity));
+export const activityViewRating = (codActivity) => (dispatch, getState) => {
+	if (codActivity !== null) {
+		const { user_ratings } = getState().userReducer;
+		let rating = user_ratings.filter(
+			(item) => item.cod_activity === codActivity
+		);
 
-//     if (rating.length > 0) {
-//       dispatch({
-//         type: ACTIVITY_VIEW_RATING,
-//         payload: rating[0].rating
-//       });
-//     }
-//   } else {
-//     dispatch({
-//       type: ACTIVITY_VIEW_RATING,
-//       payload: null
-//     });
-//   }
-// }
+		if (rating.length > 0) {
+			dispatch({
+				type: ACTIVITY_VIEW_RATING,
+				payload: rating[0].rating,
+			});
+		}
+	} else {
+		dispatch({
+			type: ACTIVITY_VIEW_RATING,
+			payload: null,
+		});
+	}
+};
 
 /**
  * Show or hidden modal to activity rating
  * @param {boolean} payload
  */
-// export const activityModalRating = (payload) => (dispatch) => {
-//   dispatch({
-//     type: ACTIVITY_RATING,
-//     payload: 0,
-//   });
-//   dispatch({
-//     type: ACTIVITY_MODAL_RATING,
-//     payload,
-//   });
-// }
+export const activityModalRating = (payload) => (dispatch) => {
+	dispatch({
+		type: ACTIVITY_RATING,
+		payload: 0,
+	});
+	dispatch({
+		type: ACTIVITY_MODAL_RATING,
+		payload,
+	});
+};
 
 /**
  * Change rating value
  * @param {int} payload
  */
-// export const activityChangeRating = (payload) => (dispatch) => {
-//   dispatch({
-//     type: ACTIVITY_RATING,
-//     payload
-//   });
-// }
+export const activityChangeRating = (payload) => (dispatch) => {
+	dispatch({
+		type: ACTIVITY_RATING,
+		payload,
+	});
+};
 
 /**
  * Save rating to activity
  * @param {string} codActivity
  * @param {string} section
  */
-// export const activitySaveRating = (codActivity, section) => async (dispatch, getState) => {
-//   let { user, user_ratings } = getState().userReducer;
-//   const { activity_rating } = getState().activityReducer;
-//   let data = {
-//     cod_user: user.uid,
-//     cod_activity: codActivity,
-//     rating: activity_rating,
-//     created_on: FirebaseActions.getFormatDate(),
-//     section,
-//   }
-//   dispatch({
-//     type: ACTIVITY_VIEW_RATING,
-//     payload: activity_rating,
-//   });
-//   dispatch(activityModalRating(false));
-//   if(Platform.OS === 'android'){
-//     dispatch(activityModal(true, 'Guardando calificación...'));
-//   }
-//   await FirebaseActions.saveDataCollectionWithAdd('activity_rating', data)
-//     .then((res) => {
-//       data.id = res.id;
-//       user_ratings.push(data);
-//       dispatch({
-//         type: USER_RATINGS,
-//         payload: user_ratings
-//       });
-//       dispatch(activityModal(false, ''));
-//       AsyncStorage.setItem('@Munay:userRatings', JSON.stringify(user_ratings));
-//     })
-//     .catch(err => {
-//       dispatch(activityModal(false, ''));
-//       console.log('Error activitySaveRating: ', err);
-//       Alert.alert(
-//         'Upsss!!!',
-//         'Lo sentimos hubo un error, vuelve a intentarlo más tarde.',
-//         [
-//           {text: 'OK', onPress: () => {
-//             dispatch(activityModal(false, ''));
-//           }}
-//         ]
-//       );
-//     });
-// }
+export const activitySaveRating =
+	(codActivity, section) => async (dispatch, getState) => {
+		let { user, user_ratings } = getState().userReducer;
+		const { activity_rating } = getState().activityReducer;
+		let data = {
+			cod_user: user.uid,
+			cod_activity: codActivity,
+			rating: activity_rating,
+			created_on: FirebaseActions.getFormatDate(),
+			section,
+		};
+		dispatch({
+			type: ACTIVITY_VIEW_RATING,
+			payload: activity_rating,
+		});
+		dispatch(activityModalRating(false));
+		// if(Platform.OS === 'android'){
+		//   dispatch(activityModal(true, 'Guardando calificación...'));
+		// }
+		await FirebaseActions.saveDataCollectionWithAdd("activity_rating", data)
+			.then((res) => {
+				data.id = res.id;
+				user_ratings.push(data);
+				dispatch({
+					type: USER_RATINGS,
+					payload: user_ratings,
+				});
+				// dispatch(activityModal(false, ''));
+				localStorage.setItem(
+					"@Munay:userRatings",
+					JSON.stringify(user_ratings)
+				);
+			})
+			.catch((err) => {
+				// dispatch(activityModal(false, ''));
+				console.log("Error activitySaveRating: ", err);
+				alert(
+					"Upsss!!!",
+					"Lo sentimos hubo un error, vuelve a intentarlo más tarde."
+					// [
+					//   {text: 'OK', onPress: () => {
+					//     dispatch(activityModal(false, ''));
+					//   }}
+					// ]
+				);
+			});
+	};
 
 /**
  * Add earth resource to end user activity
  * @param {object} user_all_data Current user info
  */
-// const addEarthResource = (user_all_data) => {
-//   if (user_all_data.resources && user_all_data.resources.earth) {
-//     user_all_data.resources.earth = user_all_data.resources.earth + 1;
-//   } else {
-//     user_all_data.resources.earth = 1;
-//   }
+const addEarthResource = (user_all_data) => {
+	if (user_all_data.resources && user_all_data.resources.earth) {
+		user_all_data.resources.earth = user_all_data.resources.earth + 1;
+	} else {
+		user_all_data.resources.earth = 1;
+	}
 
-//   return user_all_data;
-// }
+	return user_all_data;
+};
 
 /**
  * Add oxygen resource to end user activity
  * @param {object} user_all_data Current user info
  */
-// const addOxygenResource = (user_all_data) => {
-//   if (user_all_data.resources && user_all_data.resources.oxygen) {
-//     user_all_data.resources.oxygen = user_all_data.resources.oxygen + 1;
-//   } else {
-//     user_all_data.resources.oxygen = 1;
-//   }
+const addOxygenResource = (user_all_data) => {
+	if (user_all_data.resources && user_all_data.resources.oxygen) {
+		user_all_data.resources.oxygen = user_all_data.resources.oxygen + 1;
+	} else {
+		user_all_data.resources.oxygen = 1;
+	}
 
-//   return user_all_data;
-// }
+	return user_all_data;
+};
 
 /**
  * Add sun resource to end user activity
  * @param {object} user_all_data Current user info
  */
-// const addSunResource = (user_all_data) => {
-//   if (user_all_data.resources && user_all_data.resources.sun) {
-//     user_all_data.resources.sun = user_all_data.resources.sun + 1;
-//   } else {
-//     user_all_data.resources.sun = 1;
-//   }
+const addSunResource = (user_all_data) => {
+	if (user_all_data.resources && user_all_data.resources.sun) {
+		user_all_data.resources.sun = user_all_data.resources.sun + 1;
+	} else {
+		user_all_data.resources.sun = 1;
+	}
 
-//   return user_all_data;
-// }
+	return user_all_data;
+};
 
 /**
  * Add water resource to end user activity
  * @param {object} user_all_data Current user info
  */
-// const addWaterResource = (user_all_data) => {
-//   if (user_all_data.resources && user_all_data.resources.water) {
-//     user_all_data.resources.water = user_all_data.resources.water + 1;
-//   } else {
-//     user_all_data.resources.water = 1;
-//   }
+const addWaterResource = (user_all_data) => {
+	if (user_all_data.resources && user_all_data.resources.water) {
+		user_all_data.resources.water = user_all_data.resources.water + 1;
+	} else {
+		user_all_data.resources.water = 1;
+	}
 
-//   return user_all_data;
-// }
+	return user_all_data;
+};
 
 /**
  * Show or hidden modal to activity rating
  * @param {int} resource_type Code type resource
  * @param {object} user_all_data Current user info
  */
-// let addResource = (resource_type, user_all_data) => {
-//   switch(resource_type) {
-//     case 2:
-//       user_all_data = addOxygenResource(user_all_data);
-//       break;
-//     case 3:
-//       user_all_data = addSunResource(user_all_data);
-//       break;
-//     case 4:
-//       user_all_data = addWaterResource(user_all_data);
-//       break;
-//     default:
-//       user_all_data = addEarthResource(user_all_data);
-//       break;
-//   }
+let addResource = (resource_type, user_all_data) => {
+	switch (resource_type) {
+		case 2:
+			user_all_data = addOxygenResource(user_all_data);
+			break;
+		case 3:
+			user_all_data = addSunResource(user_all_data);
+			break;
+		case 4:
+			user_all_data = addWaterResource(user_all_data);
+			break;
+		default:
+			user_all_data = addEarthResource(user_all_data);
+			break;
+	}
 
-//   return user_all_data;
-// }
+	return user_all_data;
+};
 
 /**
  * Calculate percentage to end activities
  * @param {int} min Minimal number to calculate
  * @param {int} number Total activities ended
  */
-// const calculatePercertage = (min, number) => {
-//   let percetage = ((number * 100) / min) / 100;
-//   percetage = (percetage > 1) ? 1 : percetage;
-//   return percetage;
-// }
+const calculatePercertage = (min, number) => {
+	let percetage = (number * 100) / min / 100;
+	percetage = percetage > 1 ? 1 : percetage;
+	return percetage;
+};
 
 /**
  * Save to end activity
@@ -234,90 +240,100 @@ import {
  * @param {int} time
  * @param {string} codProgram
  */
-// export const activitySaveDone = (codActivity, section, time, codProgram) => (dispatch, getState) => {
-//   let { user_all_data } = getState().userReducer;
-//   let {
-//     way_happiness_total_training, way_happiness_minutes_trained, way_happiness_user_conscious,
-//     way_happiness_day_trained,
-//   } = getState().wayHappinessReducer;
+export const activitySaveDone =
+	(codActivity, section, time, codProgram) => (dispatch, getState) => {
+		let { user_all_data } = getState().userReducer;
+		let {
+			way_happiness_total_training,
+			way_happiness_minutes_trained,
+			way_happiness_user_conscious,
+			way_happiness_day_trained,
+		} = getState().wayHappinessReducer;
 
-//   // UPDATE GRAPHICS IN WAY HAPPINESS
-//   if (way_happiness_minutes_trained) {
-//     let data = way_happiness_minutes_trained.datasets[0].data;
-//     let indexData = data.length - 1;
-//     let lastTotal = data[indexData] + Math.round(time / 60);
-//     data[indexData] = lastTotal;
-//     dispatch({
-//       type: WAY_HAPPINESS_MINUTES_TRAINED,
-//       payload: way_happiness_minutes_trained,
-//     });
-//   }
-//   if (way_happiness_total_training) {
-//     let data = way_happiness_total_training.datasets[0].data;
-//     let indexData = data.length - 1;
-//     if (parseInt(data[indexData]) === 0) {
-//       let { days: {work_days, days_percentage, min_days } } = way_happiness_user_conscious;
-//       work_days = work_days + 1;
-//       way_happiness_day_trained[indexData].total = 1;
-//       way_happiness_day_trained[indexData].count = 1;
-//       days_percentage = calculatePercertage(min_days, work_days);
-//       way_happiness_user_conscious.days.work_days = work_days;
-//       way_happiness_user_conscious.days.days_percentage = days_percentage;
-//       dispatch({
-//         type: WAY_HAPPINESS_DAYS_TRAINED,
-//         payload: way_happiness_day_trained,
-//       });
-//     }
-//     let lastTotal = data[indexData] + 1;
-//     data[indexData] = lastTotal;
-//     way_happiness_total_training.datasets[0].data = data;
-//     dispatch({
-//       type: WAY_HAPPINESS_TOTAL_TRAINING,
-//       payload: way_happiness_total_training,
-//     });
-//   }
-//   dispatch({
-//     type: WAY_HAPPINESS_USER_CONSCIOUS,
-//     payload: way_happiness_user_conscious,
-//   });
-//   // END UPDATE GRAPHICS IN WAY HAPPINESS
+		// UPDATE GRAPHICS IN WAY HAPPINESS
+		if (way_happiness_minutes_trained) {
+			let data = way_happiness_minutes_trained.datasets[0].data;
+			let indexData = data.length - 1;
+			let lastTotal = data[indexData] + Math.round(time / 60);
+			data[indexData] = lastTotal;
+			dispatch({
+				type: WAY_HAPPINESS_MINUTES_TRAINED,
+				payload: way_happiness_minutes_trained,
+			});
+		}
+		if (way_happiness_total_training) {
+			let data = way_happiness_total_training.datasets[0].data;
+			let indexData = data.length - 1;
+			if (parseInt(data[indexData]) === 0) {
+				let {
+					days: { work_days, days_percentage, min_days },
+				} = way_happiness_user_conscious;
+				work_days = work_days + 1;
+				way_happiness_day_trained[indexData].total = 1;
+				way_happiness_day_trained[indexData].count = 1;
+				days_percentage = calculatePercertage(min_days, work_days);
+				way_happiness_user_conscious.days.work_days = work_days;
+				way_happiness_user_conscious.days.days_percentage = days_percentage;
+				dispatch({
+					type: WAY_HAPPINESS_DAYS_TRAINED,
+					payload: way_happiness_day_trained,
+				});
+			}
+			let lastTotal = data[indexData] + 1;
+			data[indexData] = lastTotal;
+			way_happiness_total_training.datasets[0].data = data;
+			dispatch({
+				type: WAY_HAPPINESS_TOTAL_TRAINING,
+				payload: way_happiness_total_training,
+			});
+		}
+		dispatch({
+			type: WAY_HAPPINESS_USER_CONSCIOUS,
+			payload: way_happiness_user_conscious,
+		});
+		// END UPDATE GRAPHICS IN WAY HAPPINESS
 
-//   let data = {
-//     cod_activity: codActivity,
-//     section,
-//     time: parseInt(time),
-//     cod_program: codProgram,
-//     cod_user: user_all_data.uid,
-//     created_on: FirebaseActions.getFormatDate(),
-//   }
-//   if ((codProgram.indexOf('ConsciousMusic') >= 0) || (codProgram.indexOf('playlist') >= 0)) {
-//     if (!user_all_data.limit_music) {
-//       user_all_data.limit_music = {
-//         date: FirebaseActions.getFormatDate(),
-//         time: parseInt(time)
-//       };
-//     } else {
-//       if (user_all_data.limit_music.date !== FirebaseActions.getFormatDate()) {
-//         user_all_data.limit_music = {
-//           date: FirebaseActions.getFormatDate(),
-//           time: parseInt(time)
-//         };
-//       } else {
-//         if (user_all_data.limit_music.time >= 900) {
-//           data.time = 0;
-//         } else {
-//           user_all_data.limit_music = {
-//             date: FirebaseActions.getFormatDate(),
-//             time: parseInt(time) + user_all_data.limit_music.time,
-//           }
-//         }
-//       }
-//     }
-//     dispatch(userUpdate(user_all_data));
-//   }
+		let data = {
+			cod_activity: codActivity,
+			section,
+			time: parseInt(time),
+			cod_program: codProgram,
+			cod_user: user_all_data.uid,
+			created_on: FirebaseActions.getFormatDate(),
+		};
+		if (
+			codProgram.indexOf("ConsciousMusic") >= 0 ||
+			codProgram.indexOf("playlist") >= 0
+		) {
+			if (!user_all_data.limit_music) {
+				user_all_data.limit_music = {
+					date: FirebaseActions.getFormatDate(),
+					time: parseInt(time),
+				};
+			} else {
+				if (
+					user_all_data.limit_music.date !== FirebaseActions.getFormatDate()
+				) {
+					user_all_data.limit_music = {
+						date: FirebaseActions.getFormatDate(),
+						time: parseInt(time),
+					};
+				} else {
+					if (user_all_data.limit_music.time >= 900) {
+						data.time = 0;
+					} else {
+						user_all_data.limit_music = {
+							date: FirebaseActions.getFormatDate(),
+							time: parseInt(time) + user_all_data.limit_music.time,
+						};
+					}
+				}
+			}
+			dispatch(userUpdate(user_all_data));
+		}
 
-//   FirebaseActions.saveDataCollectionWithAdd('activities_done', data);
-// }
+		FirebaseActions.saveDataCollectionWithAdd("activities_done", data);
+	};
 
 /**
  * Add end activity to historial
@@ -326,60 +342,69 @@ import {
  * @param {int} time
  * @param {boolean} codProgram
  */
-// export const activitySaveHistorial = (codActivity, section, time, codProgram) => (dispatch, getState) => {
-//   let { user_all_data, user_activities_historial } = getState().userReducer;
-//   const { practice_activities } = getState().practiceReducer;
-//   const { trainig_options } = getState().workoutReducer;
+export const activitySaveHistorial =
+	(codActivity, section, time, codProgram) => (dispatch, getState) => {
+		let { user_all_data, user_activities_historial } = getState().userReducer;
+		const { practice_activities } = getState().practiceReducer;
+		const { trainig_options } = getState().workoutReducer;
 
-//   let data = {
-//     cod_user: user_all_data.uid,
-//     section,
-//     created_on: FirebaseActions.getFormatDate(),
-//     complement: {
-//       cod_program: codProgram,
-//       cod_activity: codActivity,
-//       time,
-//     }
-//   }
+		let data = {
+			cod_user: user_all_data.uid,
+			section,
+			created_on: FirebaseActions.getFormatDate(),
+			complement: {
+				cod_program: codProgram,
+				cod_activity: codActivity,
+				time,
+			},
+		};
 
-//   let isSaved = user_activities_historial.filter(item => (
-//     item.complement.cod_activity === codActivity && item.complement.cod_program === codProgram
-//   ));
+		let isSaved = user_activities_historial.filter(
+			(item) =>
+				item.complement.cod_activity === codActivity &&
+				item.complement.cod_program === codProgram
+		);
 
-//   if (!isSaved.length) {
-//     if (section === 'happy-program') {
-//       user_all_data = addEarthResource(user_all_data);
-//     }
-//     else if (section === 'happy-practice') {
-//       if (codProgram !== 'ConsciousReading-Infographic') {
-//         let practice = practice_activities.filter((item) => (item.id === codProgram));
-//         user_all_data = addResource(practice[0].resource_prize, user_all_data);
-//       } else {
-//         user_all_data = addOxygenResource(user_all_data);
-//       }
-//     }
-//     else if (section === 'workout-of-the-day') {
-//       let training = trainig_options.filter((item) => (item.id === codProgram));
-//       user_all_data = addResource(training[0].resource_prize, user_all_data);
-//     }
+		if (!isSaved.length) {
+			if (section === "happy-program") {
+				user_all_data = addEarthResource(user_all_data);
+			} else if (section === "happy-practice") {
+				if (codProgram !== "ConsciousReading-Infographic") {
+					let practice = practice_activities.filter(
+						(item) => item.id === codProgram
+					);
+					user_all_data = addResource(
+						practice[0].resource_prize,
+						user_all_data
+					);
+				} else {
+					user_all_data = addOxygenResource(user_all_data);
+				}
+			} else if (section === "workout-of-the-day") {
+				let training = trainig_options.filter((item) => item.id === codProgram);
+				user_all_data = addResource(training[0].resource_prize, user_all_data);
+			}
 
-//     dispatch(userUpdate(user_all_data));
+			dispatch(userUpdate(user_all_data));
 
-//     FirebaseActions.saveDataCollectionWithAdd('activities_historial', data)
-//     .then(res => {
-//       data.id = res.id;
-//       user_activities_historial.push(data);
-//       dispatch({
-//         type: USER_ACTIVITIES_HISTORIAL,
-//         payload: user_activities_historial,
-//       });
-//       dispatch(activityPercentage(codProgram));
-//       AsyncStorage.setItem('@Munay:userActivitiesHistorial', JSON.stringify(user_activities_historial));
-//     })
-//     .catch(err => console.log('Error activitySaveHistorial: ', err));
-//   }
-//   dispatch(activitySaveDone(codActivity, section, time, codProgram));
-// }
+			FirebaseActions.saveDataCollectionWithAdd("activities_historial", data)
+				.then((res) => {
+					data.id = res.id;
+					user_activities_historial.push(data);
+					dispatch({
+						type: USER_ACTIVITIES_HISTORIAL,
+						payload: user_activities_historial,
+					});
+					dispatch(activityPercentage(codProgram));
+					localStorage.setItem(
+						"@Munay:userActivitiesHistorial",
+						JSON.stringify(user_activities_historial)
+					);
+				})
+				.catch((err) => console.log("Error activitySaveHistorial: ", err));
+		}
+		dispatch(activitySaveDone(codActivity, section, time, codProgram));
+	};
 
 /**
  * Show or hidden and save status tutorial modal
@@ -479,15 +504,15 @@ export const activityPercentage = (codProgram) => (dispatch, getState) => {
  * @param {boolean} status
  * @param {object} data
  */
-// export const activityModalDetail = (status, data) => (dispatch) => {
-//   dispatch({
-//     type: ACTIVITY_DATE_DETAIL,
-//     payload: {
-//       status,
-//       data,
-//     },
-//   });
-// }
+export const activityModalDetail = (status, data) => (dispatch) => {
+	dispatch({
+		type: ACTIVITY_DATE_DETAIL,
+		payload: {
+			status,
+			data,
+		},
+	});
+};
 
 /**
  * Show activities per day to work week

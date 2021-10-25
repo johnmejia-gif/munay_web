@@ -9,12 +9,12 @@ const { userRemember } = userActions;
 function Home(props) {
 	const { userRemember } = props;
 	const munayIsLogged = localStorage.getItem("@Munay:isLogged");
-	console.log("en local is logged?", munayIsLogged);
+	// console.log("en local is logged?", munayIsLogged);
 	// const munayIsLogged = JSON.parse(jsonValue);
 	// console.log("en el parse: ", munayIsLogged);
 	const userInfo = JSON.parse(localStorage.getItem("@Munay:userData"));
 	const userIsRemember = localStorage.getItem("@Munay:responseSignIn");
-	console.log("en userIsRemembrer: ", userIsRemember);
+	// console.log("en userIsRemembrer: ", userIsRemember);
 	if (userIsRemember) {
 		if (userInfo) {
 			console.log(

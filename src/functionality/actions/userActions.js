@@ -544,9 +544,9 @@ export const userData = () => (dispatch, getState) => {
 	if (user) {
 		// console.log("comprobó el user...");
 		const munayUserData = localStorage.getItem("@Munay:userData");
-		console.log("*** munayUserData: ", munayUserData);
+		// console.log("*** munayUserData: ", munayUserData);
 		if (munayUserData !== null) {
-			console.log("entró al si....");
+			// console.log("entró al si....");
 			const asyncRes = JSON.parse(munayUserData);
 			if (asyncRes.is_active) {
 				dispatch({
@@ -971,10 +971,10 @@ export const userPermissions = () => (dispatch, getState) => {
  */
 export const userRemember = () => (dispatch) => {
 	const response = localStorage.getItem("@Munay:responseSignIn");
-	console.log(
-		"$$$ está en user Remember, en @Munay:responeSignIn hay:",
-		response
-	);
+	// console.log(
+	// 	"$$$ está en user Remember, en @Munay:responeSignIn hay:",
+	// 	response
+	// );
 	dispatch({
 		type: USER_DATA,
 		payload: JSON.parse(response),

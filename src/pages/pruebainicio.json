@@ -1,0 +1,360 @@
+{
+	"data": {
+		"songs": [],
+		"videos": [
+			{
+				"title": "Entrenamiento Emocional M1",
+				"id": "0SZs9YER4SW95DTQMY9G",
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Femocionales1.mp4?alt=media&token=56acf406-55a9-41b2-a467-7a71566cc023",
+				"updated_on": { "_seconds": 1598671785, "_nanoseconds": 855000000 },
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FCopia%20de%20Amarillo%20Negro%20Youtube%20Canal%20Arte%20(4).jpg?alt=media&token=9e7bd2ce-7312-4a5e-b133-cb77d979231d",
+				"time": "96",
+				"type_resource": 1,
+				"is_private": 0,
+				"created_on": { "_seconds": 1598296748, "_nanoseconds": 288000000 }
+			},
+			{
+				"type_resource": 1,
+				"time": "429",
+				"title": "Intro y reflexión: El respeto",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FRESPETO2.jpg?alt=media&token=adfc872d-4e44-42fe-9464-91e573218940",
+				"created_on": { "_seconds": 1596777413, "_nanoseconds": 458000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2FEL%20RESPETO%20CORREGIDO.mp4?alt=media&token=099882ca-f845-45bf-8b45-c26ee481eec4",
+				"id": "0cgq9fTMErVeeF0x8cBR",
+				"updated_on": { "_seconds": 1630169802, "_nanoseconds": 696000000 },
+				"is_private": 0
+			},
+			{
+				"title": "Cocina para Fluir",
+				"id": "1P11guR8YpHwlhVCBHy7",
+				"created_on": { "_seconds": 1596603615, "_nanoseconds": 236000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Fcocina%20fluir.mp4?alt=media&token=8d07bfce-1ea9-4c7e-a9b7-e3ae16e691d6",
+				"time": "648",
+				"is_private": 0,
+				"type_resource": 1,
+				"updated_on": { "_seconds": 1598071448, "_nanoseconds": 639000000 },
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FDisen%CC%83o%20sin%20ti%CC%81tulo%20(14).jpg?alt=media&token=9473f1ee-d544-4475-84aa-47b728d16937"
+			},
+			{
+				"type_resource": 1,
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2F9D0F59AA-B8ED-4172-8D99-654B851E9B36.jpeg?alt=media&token=5a7552e3-548e-4318-835a-761219a56a3a",
+				"title": "Retos para Sonreír",
+				"updated_on": { "_seconds": 1603074161, "_nanoseconds": 935000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Fsonreir%20-%20reto.mp4?alt=media&token=a3389b2c-89b9-46e5-b96d-25b6dc8c5c34",
+				"id": "1Uw7rO2qn2LMGRwvtJ6E",
+				"is_private": 0,
+				"created_on": { "_seconds": 1596780129, "_nanoseconds": 448000000 },
+				"time": "208"
+			},
+			{
+				"title": "Entrenamiento de energía  E3",
+				"id": "1kDJKUAH4hDBgomqNBLs",
+				"updated_on": { "_seconds": 1623535580, "_nanoseconds": 340000000 },
+				"is_private": 0,
+				"created_on": { "_seconds": 1598298539, "_nanoseconds": 375000000 },
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FCopia%20de%20Amarillo%20Negro%20Youtube%20Canal%20Arte%20(11).jpg?alt=media&token=e25d01ec-f0b6-4d31-bc49-4ddbee3a5351",
+				"time": "144",
+				"type_resource": 1,
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Fenergia3.mp4?alt=media&token=009cd522-8876-4e0b-891c-1294e2b4524b"
+			},
+
+			{
+				"type_resource": 1,
+				"updated_on": { "_seconds": 1603074482, "_nanoseconds": 120000000 },
+				"id": "3e2WppfuvosipLYUxvIj",
+				"time": "147",
+				"title": "Retos para Valor Propio",
+				"created_on": { "_seconds": 1596781939, "_nanoseconds": 306000000 },
+				"is_private": 0,
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FD133C9DB-99ED-4155-99DB-F498C68323E2.jpeg?alt=media&token=9cb4ca55-9164-42b1-8412-40327907eab1",
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Freto%20-%20valor%20propio.mp4?alt=media&token=69bf5c47-e66a-411a-851f-b59866860825"
+			},
+
+			{
+				"time": "509",
+				"title": "Cocina para Puntos de Vista",
+				"id": "4w0iN9wAyFHqwOwJac1q",
+				"type_resource": 1,
+				"created_on": { "_seconds": 1596675152, "_nanoseconds": 574000000 },
+				"is_private": 0,
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FDisen%CC%83o%20sin%20ti%CC%81tulo%20(19).jpg?alt=media&token=6d0c42f9-a43f-4619-a82e-2c63af275331",
+				"updated_on": { "_seconds": 1598071464, "_nanoseconds": 904000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Fpuntosdevista%20-%20cocina.mp4?alt=media&token=266db899-885f-4fae-829d-175cdc3db166"
+			},
+			{
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FDisen%CC%83o%20sin%20ti%CC%81tulo%20(45).jpg?alt=media&token=12d00dd9-99b7-46b9-9ae5-d8c17e228b24",
+				"is_private": 0,
+				"type_resource": 1,
+				"time": "811",
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Frespeto%20-%20meditacion.mp4?alt=media&token=0bdd1036-faf2-48ae-932b-0469a650f698",
+				"created_on": { "_seconds": 1596773979, "_nanoseconds": 437000000 },
+				"title": "Meditación para Respeto",
+				"id": "5K51wYM0Wr3NlCkx83mG"
+			},
+			{
+				"time": "280",
+				"id": "6YBFo4h2fGxcEWIFnR97",
+				"is_private": 0,
+				"title": "Intro y reflexión: Fluir",
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2FFLUIR%20CORREGIDO.mp4?alt=media&token=bd116174-6cc1-4c4d-b362-16f6cf7bab8d",
+				"updated_on": { "_seconds": 1630169205, "_nanoseconds": 368000000 },
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FBONITAS14.jpg?alt=media&token=98f80804-8efe-4565-a16d-8fe12d6c700f",
+				"created_on": { "_seconds": 1596779232, "_nanoseconds": 779000000 },
+				"type_resource": 1
+			},
+			{
+				"title": "Funcional para Puntos de Vista",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FDisen%CC%83o%20sin%20ti%CC%81tulo%20(24).jpg?alt=media&token=4dad2cfd-3378-40d4-aade-2d5b512c705a",
+				"type_resource": 1,
+				"time": "517",
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Fpuntos%20de%20vista%20-%20funcional%20(1).mp4?alt=media&token=5432fd54-c50d-4106-b660-572cfda40b5e",
+				"is_private": 0,
+				"created_on": { "_seconds": 1596680633, "_nanoseconds": 285000000 },
+				"id": "7qY8M6mdzj6tRMmDu5B7"
+			},
+
+			{
+				"updated_on": { "_seconds": 1630168420, "_nanoseconds": 455000000 },
+				"time": "422",
+				"title": "Intro y reflexión: Ser Tú",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FSERTU%CC%815cut.jpg?alt=media&token=7844ff6d-ee63-4821-962f-25ceb9a63fc3",
+				"id": "CzrNUK4fiIMMqdebTgoN",
+				"created_on": { "_seconds": 1596777836, "_nanoseconds": 904000000 },
+				"is_private": 0,
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2FSER%20TU%CC%81%20MISMO.mp4?alt=media&token=6ba7e4a3-90db-43d1-a71f-daaa3333f0cc",
+				"type_resource": 1
+			},
+			{
+				"created_on": { "_seconds": 1594859443, "_nanoseconds": 950000000 },
+				"updated_on": { "_seconds": 1598892507, "_nanoseconds": 226000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Femociones%20baile.mp4?alt=media&token=c2f9175d-4937-430e-984e-53f59a4eddfa",
+				"type_resource": 1,
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FDisen%CC%83o%20sin%20ti%CC%81tulo%20(3).jpg?alt=media&token=7e826d73-9887-40b9-bec6-51a17082229e",
+				"id": "E9beYkj1qsep9KG5YZNA",
+				"time": "336",
+				"title": "Baile para Las emociones",
+				"is_private": 0
+			},
+			{
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FBONITAS7.jpg?alt=media&token=bec75b70-1861-4135-b33f-87c1395c2926",
+				"updated_on": { "_seconds": 1630169471, "_nanoseconds": 716000000 },
+				"time": "390",
+				"id": "Fa8GYNtgPrENvlB7cleR",
+				"title": "Intro y reflexión: Gratitud",
+				"created_on": { "_seconds": 1596778468, "_nanoseconds": 5000000 },
+				"is_private": 0,
+				"type_resource": 1,
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2FGRATITUD%20CORREGIDO.mp4?alt=media&token=c9917f2b-8c49-4d41-969f-39da55da3eed"
+			},
+			{
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2F5.%20emociones%20marla.jpg?alt=media&token=d5f19158-7fa7-4314-84c2-eb1d73b8d9ec",
+				"time": "1051",
+				"type_resource": 1,
+				"title": "Meditación para Las emociones",
+				"created_on": { "_seconds": 1596773852, "_nanoseconds": 418000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2FEmociones%20-%20meditacion.mp4?alt=media&token=574a2d6e-9b0a-402d-8994-940a594d0e12",
+				"id": "FgbxlwpKRgAp5lNGzeGv",
+				"updated_on": { "_seconds": 1598892497, "_nanoseconds": 41000000 },
+				"is_private": 0
+			},
+			{
+				"is_private": 0,
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2FContemplacio%CC%81n%20-%20Yoga.mp4?alt=media&token=864986aa-cba1-4e3c-9b7a-32eb106dd8af",
+				"created_on": { "_seconds": 1596785652, "_nanoseconds": 775000000 },
+				"id": "FxShso97qVPwmutQSO18",
+				"type_resource": 1,
+				"time": "560",
+				"updated_on": { "_seconds": 1598071618, "_nanoseconds": 638000000 },
+				"title": "Yoga para Contemplación",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FDisen%CC%83o%20sin%20ti%CC%81tulo%20(83).jpg?alt=media&token=35f1e3a8-a862-4f32-ba9f-ee2cf44046da"
+			},
+			{
+				"type_resource": 1,
+				"updated_on": { "_seconds": 1603074421, "_nanoseconds": 629000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Fcausaefecto%20-%20retos.mp4?alt=media&token=cce236e1-d629-46f2-9dc9-7db3d43cd877",
+				"time": "115",
+				"id": "HOs6rkG4gDi1n3DozgWm",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FCB8FB262-2B6E-4007-8A57-3E9FD5681854.jpeg?alt=media&token=a30bbb5c-4bbf-4ba0-9fa5-ad2623c4a7b3",
+				"title": "Retos para Causa y Efecto",
+				"is_private": 0,
+				"created_on": { "_seconds": 1596779844, "_nanoseconds": 934000000 }
+			},
+			{
+				"created_on": { "_seconds": 1596681042, "_nanoseconds": 450000000 },
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FDisen%CC%83o%20sin%20ti%CC%81tulo%20(26).jpg?alt=media&token=5550c989-a2ea-4aba-b310-bbafc435fc91",
+				"is_private": 0,
+				"id": "HhCm0eBM90SSxYIKSX74",
+				"type_resource": 1,
+				"time": "1352",
+				"title": "Funcional para Lo importante y sagrado",
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Ftodoimporta%20-%20funcional.mp4?alt=media&token=f0368be8-c58a-470a-a600-c4a102525fc1",
+				"updated_on": { "_seconds": 1598897353, "_nanoseconds": 182000000 }
+			},
+			{
+				"updated_on": { "_seconds": 1598977945, "_nanoseconds": 236000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Fconfianza%20-%20cocina.mp4?alt=media&token=c80d839b-3160-4194-a9f4-8fa91448fe99",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FDisen%CC%83o%20sin%20ti%CC%81tulo%20(22).jpg?alt=media&token=6fe38b3d-9388-40d2-82f1-594085a3c308",
+				"created_on": { "_seconds": 1596679782, "_nanoseconds": 990000000 },
+				"type_resource": 1,
+				"is_private": 0,
+				"time": "751",
+				"id": "IkgKIQK0VowRXoKdiVa7",
+				"title": "Cocina para La Confianza"
+			},
+			{
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2F7E452699-B9E4-4C6E-8DC2-A3CC254F21E9.jpeg?alt=media&token=b836741b-5456-4ca3-ab23-2a6795bdea02",
+				"created_on": { "_seconds": 1596780037, "_nanoseconds": 832000000 },
+				"is_private": 0,
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2Ftodoimporta%20-%20retos.mp4?alt=media&token=8c36942d-745b-47c4-b32a-03ca773aded8",
+				"updated_on": { "_seconds": 1603074536, "_nanoseconds": 560000000 },
+				"id": "Ir49jVZ8bSysN5GGaal4",
+				"title": "Retos para lo Importante y sagrado",
+				"time": "130",
+				"type_resource": 1
+			},
+			{
+				"time": "262",
+				"updated_on": { "_seconds": 1630169543, "_nanoseconds": 977000000 },
+				"resource": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fvideo%2FEMOCIONES%20CORREGIDO.mp4?alt=media&token=af64ddfb-6a5c-45de-bb24-1d027b5b5b89",
+				"created_on": { "_seconds": 1596775153, "_nanoseconds": 59000000 },
+				"is_private": 0,
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FEMOCIONES4.jpg?alt=media&token=911cdefd-e9d7-4a39-bd4f-1659bc986ca3",
+				"type_resource": 1,
+				"id": "Iwavp0T1BoysktWMYrTw",
+				"title": "Intro y reflexión: Emociones"
+			}
+		],
+		"audios": [],
+		"infografias": [],
+		"article_categories": [],
+		"articles": [],
+		"playlists": [],
+		"gardens": [],
+		"plants": [],
+		"activities": [
+			{
+				"type": 2,
+				"description": "Más allá de tu cuerpo, entrena tu mente, tus emociones y tu energía vital para experimentar el bienestar ☣️",
+				"id": "9goUlc4UgXBacAMHGITI",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Fenergia%20practica%20de%20felicdad%20.jpg?alt=media&token=d6b02d0b-921e-4de7-bafa-de277243db3e",
+				"resource_prize": 4,
+				"name": "Mente + emociones + energía vital",
+				"order": 1
+			},
+
+			{
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Fmeditacio%CC%81n2.jpg?alt=media&token=6f355f9f-5425-4a78-945d-f87a9300dcc7",
+				"id": "a0qX2yEfXvFLMmyTC1th",
+				"resource_prize": 2,
+				"order": 2,
+				"description": "Meditación... esa sí me cuesta hahaha. Inténtalo, meditar es, es... ",
+				"name": "Meditaciones MUNAY",
+				"type": 2
+			},
+
+			{
+				"description": "Cocinar a tu ritmo y gusto, sin gramos ni reglas, con la consciencia del bienestar y vitalidad en tu cuerpo. Entrena tus sentidos para oler, tocar, y saborear mientras cocinas. ",
+				"name": "Cocina MUNAY",
+				"type": 2,
+				"resource_prize": 1,
+				"order": 3,
+				"id": "Ypxsq6LKnvophXRF9kKk",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Fcocina%20consciente%20.jpg?alt=media&token=60e430ae-7feb-4ec8-b10e-867d5cd5d9fb"
+			},
+
+			{
+				"type": 2,
+				"name": "Baile MUNAY",
+				"description": "\"Ayer cuando bailamos fue como dejar de lado la pena. Si, es bonito mover la cabeza formalmente y ya, pero es extático mover el cuerpo sin límites, reglas, reparos ni juicios. No hay que esperar a la pista de baile, es bailar en la ducha, cocinando, o en la fila de banco\"",
+				"order": 4,
+				"id": "7jWsEhSHxntaV4aSIsDX",
+				"resource_prize": 4,
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Fbaile%20consciente%201.jpg?alt=media&token=df82127b-c848-4237-b63d-e7ab432d83f1"
+			},
+
+			{
+				"name": "Entrenamiento Funcional MUNAY",
+				"type": 2,
+				"description": "Integra los elementos de consciencia en una práctica de  acondicionamiento físico: respiración, intención, presencia y meditación. ¿Alguna vez te has preguntado cómo, dónde, qué dicen tus rodillas, tu abdomen, tu cuerpo mientras entrenas?",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Fe%20funcional%20consciente.jpg?alt=media&token=fcffd5f6-f462-41a1-b652-2d1d33fda401",
+				"resource_prize": 1,
+				"order": 5,
+				"id": "GORFvwOLBi8cYFBNGUzG"
+			},
+
+			{
+				"description": "Entrenamientos para  el enfoque, la intención, visualización y gestión de esta dimensión poderosa de tu ser: La mente",
+				"id": "IkK45lbvoH9DfM1eLUBd",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Fentrenamientos%20%20mentales%20.jpg?alt=media&token=e4d73479-a2a6-45cc-8388-b9c7a73c08b9",
+				"name": "Entrenamientos mentales MUNAY",
+				"resource_prize": 2,
+				"type": 2,
+				"order": 6
+			},
+
+			{
+				"order": 7,
+				"resource_prize": 4,
+				"description": "Entrenamientos para escuchar, observar, sentir, gestionar y fluir con tus emociones. Cómo se activan, de dónde vienen, cómo recibirlas, aprender de ellas, y soltar estás energías de la dimensión emocional de tu ser.",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Femocionales%20chica%20doble.jpg?alt=media&token=606583a3-8d4b-45ea-9ba4-b3605cdf94ea",
+				"id": "zTynzy77An7dkg21wAH5",
+				"type": 2,
+				"name": "Entrenamientos emocionales MUNAY"
+			},
+
+			{
+				"type": 2,
+				"resource_prize": 3,
+				"name": "Yoga MUNAY",
+				"id": "UTTW7LCfRbGxZdCALPIe",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FYoga%20pie.jpg?alt=media&token=1368fe85-02f8-4439-a65d-ae2811cf908b",
+				"order": 8,
+				"description": "¿Ganas de sentirte funky, estirar y sencillamente fluir con tu cuerpo? Yoga Munay es más que repetir mantras, apretar, aguantar, o poner una piedra encima de otra como un monje zen. Nuestro yoga sabe a frutas, celebración y gozo de mover el cuerpo meditando. "
+			},
+			{
+				"name": "Lecturas MUNAY",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Flibros%20practica%20de%20felicidad%20.jpg?alt=media&token=bcca972c-ae26-477e-b6a8-404f81a17d22",
+				"description": "La lectura es tan estimulante como comerte una fruta... o ser tú la fruta. Explora nuestras lecturas conscientes. ",
+				"id": "ConsciousReading",
+				"order": 9,
+				"type": 2,
+				"resource_prize": 2
+			},
+
+			{
+				"order": 10,
+				"type": 2,
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Fm%C3%BAsica%20consciente.jpg?alt=media&token=b6a8f50a-7992-43bd-8d0a-5ee4a9be38d2",
+				"description": "La música es universal, profunda, sensorial, humana y divina. Cuando escuches la música de Munay, te invitamos a sentir y saborear cada instrumento, melodía, ritmo, y reconocer a donde te lleva, cómo te estimula emocional, mental, sexual o espiritualmente",
+				"id": "ConsciousMusic",
+				"name": "Música MUNAY"
+			},
+
+			{
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2Fayuno%20difital%20prsacticas%20de%20felicidad%201.jpg?alt=media&token=319edfe5-7310-4f18-b40f-33b31844419c",
+				"order": 11,
+				"name": "Ayuno Digital MUNAY",
+				"id": "ayunodigital",
+				"resource_prize": 4,
+				"type": 2,
+				"description": "El break de la virtualidad, de estar disponible y online pero no pasa nada. Estar solo para ti, sin wifi, sin esperar un mensaje, correo o like. Parece sencilla, pero puede ser la práctica más difícil en Munay, soltar lo digital y conectar con tu realidad. "
+			},
+			{
+				"id": "IntermittentFasting",
+				"coverpage": "https://firebasestorage.googleapis.com/v0/b/munay-db.appspot.com/o/resources%2Fcoverpage%2FAyuno%20de%20comida%204.jpg?alt=media&token=256b4e3c-f19a-40b9-b8f8-9a30deef6004",
+				"resource_prize": 4,
+				"name": "Ayuno intermitente MUNAY",
+				"order": 12,
+				"description": "El tiempo es tu alimento, estar disponible para otras energías que no son masticar, ingerir o digerir. Estar solo para ti, sin apetito, sin esperar un plato, postre o snack. Siente como el ayuno de comida nutre tu alma, calma tu mente, entrena tus emociones y purifica tu cuerpo.",
+				"type": 2
+			}
+		],
+		"activity_items": [],
+		"training_items": [],
+		"happy_moments": [],
+		"playlist_songs": [],
+		"epiphanies": [],
+		"conscious_phrases": []
+	},
+	"message": "initial resources"
+}
