@@ -19,6 +19,7 @@ import Program from "./pages/Program";
 import Moment from "./pages/Moment";
 import Practices from "./pages/Practices";
 import PracticeScreen from "./components/happyPractice/PracticeScreen";
+import RegisterScreen from "./components/RegisterScreen";
 // import { syncHistoryWithStore } from "react-router-redux";
 // import browserHistory from "history/createBrowserHistroy";
 // import { createBrowserHistory } from "history";
@@ -37,6 +38,7 @@ function App() {
 					<Route exact path="/" component={Home} />
 					<Route exact path="/home-logged" component={HomeLogged} />
 					<Route exact path="/singin" component={LoginScreen} />
+					<Route exact path="/signup" component={RegisterScreen} />
 					<Route exact path="/happiness-program" component={Program} />
 					<Route exact path="/happiness-moment" component={Moment} />
 					<Route exact path="/happiness-practices" component={Practices} />

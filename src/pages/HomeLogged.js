@@ -36,7 +36,7 @@ function HomeLogged(props) {
 	// }
 	return (
 		<div className="contenedor01-1">
-			<h2>Hola {user.displayName}</h2>
+			{user && <h2>Hola {user.displayName}</h2>}
 			<h3>lo que hay en munayIsLogged es: {munayIsLogged}</h3>
 		</div>
 	);

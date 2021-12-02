@@ -109,6 +109,7 @@ export const userChangeLastname = (value) => (dispatch) => {
  * @param {string} value
  */
 export const userChangeUsername = (value) => (dispatch) => {
+	console.log("<<< ingresó a userChangeUsername");
 	dispatch({
 		type: USER_USERNAME,
 		payload: value,
