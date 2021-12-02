@@ -1,0 +1,30 @@
+{
+    "mundosDeFelicidad": {
+        "celebracion": {
+            "gratitud": {
+                "nivel1": "dataNivel1",
+                "nivel2": "dataNivel2",
+                "nivel3": "dataNivel3",
+                "nivel4": "dataNivel4"
+            }
+        },
+        "Conexion": {},
+        "transformacion": {}
+    },
+    "users":{
+        "uid":"uid",
+        "email":"email",
+        "username":"username",
+        "fechaRegistro":"fechaDeRegistro",
+        "fechaDeActPerfil":"fechadeact",
+        "resources":{
+            "agua":1,
+            "tierra":2,
+            "oxigeno":3,
+            "sol":4
+        },
+        "isActive":"true/false",
+        "tipo_user":"null(basico)/loQueIndique",
+        "subscription":"subscription"
+    }
+}

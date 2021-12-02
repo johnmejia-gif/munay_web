@@ -919,51 +919,20 @@ export const userPermissions = () => (dispatch, getState) => {
 		});
 		return;
 	}
-	let currentDate = FirebaseActions.getFormatDate();
-	currentDate = new Date(currentDate);
-	let testDate = new Date(user_all_data.start_trial);
-	// let testDate = new Date('2020/08/02');
-	let resDate = currentDate - testDate;
-	resDate = resDate / (1000 * 60 * 60 * 24);
-	if (resDate >= 0 && resDate <= 7) {
-		let days = 7 - resDate;
-		let message = `Tienes ${days} días de prueba. Puedes activar Munay premium en cualquier momento.`;
-		if (days === 0) {
-			message = `Este es tu último día de prueba. Puedes activar Munay premium en cualquier momento.`;
-		}
-		let title = `¡Gracias por entrenar la felicidad en Munay!`;
-		dispatch({
-			type: USER_PERMISSIONS,
-			payload: true,
-		});
+	if (!user_all_data.start_trial) {
 		dispatch(
 			openCloseTooltip({
-				status: true,
-				title,
-				message,
-				subscription: true,
-			})
-		);
-		return;
-	} else {
-		let name =
-			user_all_data.firstname !== ""
-				? user_all_data.firstname
-				: user_all_data.username;
-		let message = `Hola ${name}, la semana de prueba en Munay premium terminó. Si quieres volver a Munay Premium con acceso a todo el contenido y secciones puedes suscribirte en "Mi espacio" o haz click aquí.`;
-		let title = `Entrenar tu felicidad es nuestra motivación y sustento`;
-		dispatch(
-			openCloseTooltip({
-				status: true,
-				title,
-				message,
-				subscription: true,
+				status: false,
+				title: "",
+				message: "",
+				subscription: false,
 			})
 		);
 		dispatch({
 			type: USER_PERMISSIONS,
 			payload: false,
 		});
+		return;
 	}
 };
 
